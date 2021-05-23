@@ -1,0 +1,29 @@
+﻿@model Seyahat.Models.Siniflar.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Gezi Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))  /*sayfada bır butona tıklayıp POST ıslemı gerceklestırdıgınde Admın controller ıcındekı BlogGuncellle ye gıt*/
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control",@readonly="readonly" })    /*readonly ıle sayfada degısıklık yapılmıyor.sadece okunabılır bır ozellık*/
+    <br />
+    @Html.LabelFor(x => x.Baslik)
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogImage)
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextAreaFor(x => x.Aciklama,15,1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Gezi Güncelle</button>
+
+}

@@ -1,0 +1,17 @@
+﻿@using Seyahat.Models.Siniflar
+@model List<Blog>
+<div class="padding">
+    <h4>En Popüler 10 Gezi</h4>
+    <ul class="list list-pad">
+        @{ int i = 0; }
+        @foreach (var x in Model)
+        {
+
+
+            <li class="list-bg"><span></span>@{i++; } @i.<a href="/Blog/BlofDetay/@x.ID">@x.Baslik</a></li>
+            @*ADRES YONLENDIRMESİ YAPIYORUZ USTUNE BASILINCA BLOGDETAY ICINDEKİ BİLGİLERİ GOSTER*@
+        }
+        
+    </ul>
+    <a href="/Blog/Index/" class="link1">Tüm Blogları Gör</a>
+</div>

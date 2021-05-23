@@ -1,0 +1,23 @@
+﻿@using Seyahat.Models.Siniflar
+@model List<Blog>
+<div class="con-bot">
+    @foreach (var x in Model)
+    {
+
+
+        <div class="left">
+            <div class="bot-left">
+                <img src=@x.BlogImage alt="" />
+            </div>
+            <div class="left-text">
+                <h4>@x.Baslik</h4>
+                <span class="doller">@x.Tarih.ToString("dd.MM.yyyy")  <br>1500₺</span> @*// @x.Tarih dersen tarıh kısmı gelcek yada fıyat yazarak bırakabılırsın*@
+            <p>@x.Aciklama.Substring(0, 97)</p>
+                <p><a href="/Blog/BlofDetay/@x.ID"><span class="read">Devamını Oku>></span></a></p> @*BLOFDETAYIN ICINDEKI ID DEGERINE KARSILIK GELEN BLOGU GOSTERDI DEVAMINI OKU DEDIKTEN SONRA ID YE GORE BLOG SAYFASI ACILIR*@
+            </div>
+        </div>
+    }
+    @Html.Action("Partial2","Default")   @*OLUSTURULAN PARTİAL 2 KISMINI CAGIRDIM VE DEFAULTUN ICINDE OLDUGUNU BELIRTTIM*@
+   
+    <div class="clear"></div>
+</div>

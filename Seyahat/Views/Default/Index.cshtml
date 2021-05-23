@@ -1,0 +1,112 @@
+﻿@using Seyahat.Models.Siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@*#İCERİKLERIN YAZILACAGI KISIM. Burayı aktıf olarak kullancam ANASAYFA INDEX SAYFASI*@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <div class="header-banner">
+        <div class="wrap">
+            <div class="banner">
+                <div class="indent">
+                    <h2 class="indent-left margin-bot" style="margin-left:80px">Gezi Planını Yapmaya Ne Dersin?</h2>
+                    <div class="banner-left">
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/glass.png" alt="">
+                            </div>
+                            <div class="grid1-desc"> @*RESTORAN KISMI*@
+                                <a href="https://www.tripadvisor.com.tr/Restaurants" ><p>Restoranlar</p></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/flight.png" alt="">
+                            </div>
+                            <div class="grid1-desc"> @*UCUSLAR KISMI*@
+                                <a href="https://biletbayisi.com/?gclid=Cj0KCQjw4cOEBhDMARIsAA3XDRgB-2JA3wwW8vIG8MQI_7Z78veycxIMT8lyiO-vt8l13rQrASDezg8aArptEALw_wcB" ><p>Uçuşlar</p></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/group.png" alt="">
+                            </div>
+                            <div class="grid1-desc">@*oteller KISMI*@
+                                <a href="https://www.trivago.com.tr/?themeId=101&iPathId=32092&sem_keyword=oteller&sem_creativeid=514004027756&sem_matchtype=e&sem_network=g&sem_device=c&sem_placement=&sem_target=&sem_adposition=&sem_param1=&sem_param2=&sem_campaignid=11403713037&sem_adgroupid=112009860615&sem_targetid=kwd-334108649&sem_location=1012776&cip=9019000403&gclid=Cj0KCQjw4cOEBhDMARIsAA3XDRiToLz6-HQZRvta69fwEC9cN0Tiv2vUWGdlm4sHRE7mIxY2eEYFtkcaApGBEALw_wcB"><p>Oteller </p></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+
+
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/key.png" alt="">
+                            </div>
+                            <div class="grid1-desc"> @*arac kıralama KISMI*@
+                               <a href="https://www.sixt.com.tr/kiralama-noktalari"> <p>Araba Kiralama</p></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="header_bottom_right_images">
+
+                        <div class="slider" style="width:650px; height:500px;"> @*heigt 365 yaptı*@
+                            <ul class="rslides" id="slider1">
+                                @foreach (var x in Model)
+                                {
+
+
+                                    <li><img src="@x.BlogImage" alt=""></li>
+                                    @*<li><img src="~/web/images/img2.jpg" alt=""></li>
+                                        <li><img src="~/web/images/img3.jpg" alt=""></li>
+                                        <li><img src="~/web/images/img4.jpg" alt=""></li>*@
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class"content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="con-top">
+                    <h3>Tatil Seyahat Sitesine Hoşgeldiniz.</h3>
+                    <p><i> Bizimle Tatil Planı Yapmak Çok Keyfli olacak. Sizlere Sunduğumuz Ayrıcalıklar ile Tatiller Daha Eğlenceli Geçecek.
+                        Gidilen Yerler Hakkında Yapılan Yorumlardan Fikir Alarak Gitmek İstediğin Yere Hemen Karar Verme İmkanı Sizleri Bekliyor.</i> </p>
+                        </div>
+                @Html.Action("Partial1","Default")
+                <div class="grids">
+                    <div class="box1">
+                        @Html.Action("Partial3","Default")
+                        @Html.Action("Partial4","Default")
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

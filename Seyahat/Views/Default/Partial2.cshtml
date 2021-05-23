@@ -1,0 +1,20 @@
+﻿@using Seyahat.Models.Siniflar
+@model List<Blog>
+@foreach (var x in Model)
+{
+
+
+    <div class="right">
+        @*ANASAYFADA 2 LEFT 1 RIGHT CLASSI VAR SAG OLAN SINIF ASAGI KAYDIGI ICIN ONU SİLİP YENI PARTİAL OLUSTURCAZ  SAYFADA SADECE 2  TANESI GORUNCEK YENI PARTİALDA BU KISIM ile 3 olcak  *@
+        <div class="bot-left">
+            <img src="@x.BlogImage" alt="" />
+        </div>
+        <div class="left-text">
+
+            <h4>@x.Baslik</h4>
+            <span class="doller">@x.Tarih.ToString("dd.MM.yyyy")  <br>$924.99 </span>  @*@x.Tarih kısmını yazmadım*@
+            <p>@x.Aciklama.Substring(0,89)</p>
+            <p><a href="/Blog/BlofDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+        </div>
+    </div>
+}
